@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Client</title>
+</head>
+<body>
+    <h1>Websocket Client</h1>
+    <button onclick="send()">send</button>
+    <div id="content"></div>
+
+    <script>
+        var ws = new WebSocket('ws://localhost:8080');
+
+        ws.onopen = function(evt) {
+            console.log('Connection open...');
+        };
+
+        ws.onmessage = function(evt) {
+            console.log('Received Message: ' + evt.data);
+            var p = document.createElement('p');
+            p.innerHTML = evt.data;
+            document.getElementById('content').appendChild(p);
+        };
+
+        ws.onclose = function(evt) {
+            console.log('Connectin closed.');
+        };
+
+        ws.onerror = function(evt) {
+            console.error('Error Message: ', evt);
+        };
+
+        function send() {
+            ws.send('Hello World!!!');
+        }
+    </script>
+</body>
+</html>

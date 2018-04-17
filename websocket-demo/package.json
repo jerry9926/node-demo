@@ -1,0 +1,15 @@
+{
+  "name": "node-websocket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client": "http-server ./client/ -p 3001",
+    "server": "node ./server/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^3.2.0"
+  }
+}
