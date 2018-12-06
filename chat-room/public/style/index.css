@@ -1,0 +1,41 @@
+body {
+  padding: 50px;
+  font: 14px Helvetica, sans-serif;
+}
+a {
+  color: #00b7ff;
+}
+#content {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#room {
+  background-color: #ddd;
+  margin-bottom: 1em;
+}
+#message {
+  width: 600px;
+  height: 300px;
+  overflow: auto;
+  background: #f3f3f3;
+  margin-bottom: 1em;
+  margin-right: 10px;
+}
+#room-list {
+  float: right;
+  width: 200px;
+  height: 300px;
+  overflow: auto;
+}
+#room-list div {
+  border-bottom: 1px solid #ddd;
+}
+#room-list div:hover {
+  background-color: #f3f3f3;
+}
+#send-message {
+  width: 700px;
+  margin-bottom: 1em;
+  margin-right: 1em;
+}

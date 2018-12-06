@@ -1,14 +1,35 @@
 /**
  * Created by zhijie.huang on 2017/9/22.
  */
-
+const fs = require('fs');
+const path = require('path');
 const WebSocketServer = require('ws');
 const wss = new WebSocketServer.Server({
     port: 8080,
     verifyClient: socketverify
 });
 
+console.log('__dirname=' + __dirname);
+
+
+let data = fs.readFileSync(path.resolve(__dirname, 'data1.json'), {encoding: 'utf8'});
+try {
+    data = JSON.parse(data);
+} catch (err) {
+    console.error('json error', err);
+}
+
+console.log(data.length);
+
 setupWebsocket();
+
+function sendData(ws, data) {
+    setInterval(function () {
+        let res = data[Math.floor(Math.random() * data.length)]
+        res = JSON.stringify(res);
+        ws.send(res);
+    }, 2000)
+}
 
 function setupWebsocket() {
     wss.on('connection', function(ws) {
@@ -22,13 +43,7 @@ function setupWebsocket() {
 
         ws.send('hello+');
 
-         setInterval(() => {
-             try {
-                 ws.send('something' + new Date());
-             } catch (err) {
-                console.error('Send Error', err);
-             }
-         }, 3000);
+        sendData(ws, data);
     });
 }
 function heartbeat() {

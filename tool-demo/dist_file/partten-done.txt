@@ -1,0 +1,23 @@
+i18n.add, <button class="btn btn-primary mr10" type="button" slot="add" @click="e_addShow" v-text="i18n.add" v-g-rac="getRac('siteList_add')"></button>
+i18n.list.id, <uk-label classes="form-control-label" :label="i18n.list.id" v-if="i18n.list"></uk-label>
+i18n.list.name, <uk-label classes="form-control-label" :label="i18n.list.name" v-if="i18n.list"></uk-label>
+i18n.list.siteCode, <uk-label classes="form-control-label" :label="i18n.list.siteCode" v-if="i18n.list"></uk-label>
+i18n.list.siteType, <uk-label classes="form-control-label" :label="i18n.list.siteType" v-if="i18n.list"></uk-label>
+i18n.list.network, <uk-label classes="form-control-label" :label="i18n.list.network" v-if="i18n.list"></uk-label>
+i18n.list.bandWidth, <uk-label classes="form-control-label" :label="i18n.list.bandWidth" v-if="i18n.list"></uk-label>
+i18n.list.contact, <uk-label classes="form-control-label" :label="i18n.list.contact" v-if="i18n.list"></uk-label>
+i18n.list.phone, <uk-label classes="form-control-label" :label="i18n.list.phone" v-if="i18n.list"></uk-label>
+i18n.list.address, <uk-label classes="form-control-label" :label="i18n.list.address" v-if="i18n.list"></uk-label>
+i18n.list.accessId, <uk-label classes="form-control-label" :label="i18n.list.accessId" v-if="i18n.list"></uk-label>
+i18n.list.secretKey, <uk-label classes="form-control-label" :label="i18n.list.secretKey" v-if="i18n.list"></uk-label>
+i18n.list.ec2endpoint, <uk-label classes="form-control-label" :label="i18n.list.ec2endpoint" v-if="i18n.list"></uk-label>
+i18n.list.ipAddrSegment, <uk-label classes="form-control-label" :label="i18n.list.ipAddrSegment" v-if="i18n.list"></uk-label>
+i18n.list.remarks, <uk-label classes="form-control-label" :label="i18n.list.remarks" v-if="i18n.list"></uk-label>
+i18n.save, v-text="i18n.save"></button>
+i18n.update, this.dialogTitle = this.i18n.update;
+i18n.deleteConfirm, txt: this.i18n.deleteConfirm,
+i18n.delete, title: this.i18n.delete,
+i18n.success, txt: that.i18n.success
+i18n.success, txt: that.i18n.success
+i18n.success, txt: that.i18n.success
+i18n.add, this.dialogTitle = this.i18n.add;
