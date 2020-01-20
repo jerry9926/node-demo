@@ -1,0 +1,17 @@
+{
+  "name": "cvs-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "demo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "iconv": "^2.3.5",
+    "iconv-lite": "^0.5.1",
+    "node-xlsx": "^0.15.0"
+  }
+}
