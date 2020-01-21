@@ -1,3 +1,12 @@
+
+/**
+ * wechat账单格式转alipay账单格式工具
+ * 1. 把原来wechat账单手动转为xlsx格式
+ * 2. 放到temp路径，修改IMPORT_PATH、DIST_PATH
+ * 3. 运行 node demo.js
+ * 4. 得到alipay账单格式的xlsx格式的文件
+ * 5. 手动把xlsx格式的文件转为csv格式
+ */
 const path = require('path')
 const fs = require('fs')
 const iconv = require('iconv-lite')
@@ -5,13 +14,14 @@ const xlsx= require('node-xlsx')
 
 const TEMP_PATH = path.join(__dirname, './temp/alipay_record_temp1.xlsx')
 const IMPORT_PATH = path.join(__dirname, './temp/wechat_record(20191101-20191231).xlsx')
+const DIST_PATH = path.join(__dirname, './dist/wechat_record(20191101-20191231).xlsx')
 
-handle(TEMP_PATH, IMPORT_PATH)
+handle(TEMP_PATH, IMPORT_PATH, DIST_PATH)
 
-function handle(tempPath, importPath) {
+function handle(tempPath, importPath, distPath) {
     const importData = readExcel(importPath)
     const mergeData = mergeExcel(importData, tempPath)
-    writeExcel(mergeData)
+    writeExcel(mergeData, distPath)
 }
 
 /**
@@ -118,8 +128,8 @@ function mergeExcel(data, filePath) {
 
 
 // 写入表格
-function writeExcel(tempFile) {
-    const fileName = 'test2.xlsx'
+function writeExcel(tempFile, filePath) {
+    const fileName = filePath
     const buffer = xlsx.build(tempFile)
     fs.writeFile(fileName, buffer, function (err) {
         if (err) throw err
