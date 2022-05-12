@@ -13,8 +13,8 @@ const iconv = require('iconv-lite')
 const xlsx= require('node-xlsx')
 
 const TEMP_PATH = path.join(__dirname, './temp/alipay_record_temp1.xlsx')
-const IMPORT_PATH = path.join(__dirname, './temp/wechat_record(20191101-20191231).xlsx')
-const DIST_PATH = path.join(__dirname, './dist/wechat_record(20191101-20191231).xlsx')
+const IMPORT_PATH = path.join(__dirname, './temp/wechat_record(20220101-20220331).xlsx')
+const DIST_PATH = path.join(__dirname, './dist/wechat_record(20220101-20220331).xlsx')
 
 handle(TEMP_PATH, IMPORT_PATH, DIST_PATH)
 
